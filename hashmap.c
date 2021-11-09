@@ -36,8 +36,8 @@ int hashFunction(char *name)
         i++;
     }
 
-    printf("check 1: %d\n", key);
-    printf("check 2: %d\n\n", (key % hashSize));
+    //printf("check 1: %d\n", key);
+    //printf("check 2: %d\n\n", (key % hashSize));
     return (key % hashSize);
 }
 
@@ -61,8 +61,8 @@ void insertName(char *name)
         index %= hashSize;
     }
     hashArray[index] = Name;
-    printf("%s\n", Name->name);
-    printf("index is: %d", index);
+    //printf("%s\n", Name->name);
+    printf("index is: %d\n", index);
 }
 
 struct NameStruct *searchName(char *name)
@@ -94,9 +94,9 @@ int main()
     char name[20];
     int choice = 1;
     int iterator = 0;
-    printf("Welcome to the Name dictionary\nHow many names would you like to enter in the dictionary?\n");
+    printf("\n----------------------------------\n");
+    printf("\n\nWelcome to the Name dictionary\n\nHow many names would you like to enter in the dictionary?\n");
     scanf("%d", &size);
-    printf("%d", size);
 
     while (choice)
     {
@@ -110,11 +110,13 @@ int main()
 
         insertName(name);
         iterator++;
-        printf("Would you like to enter another name?\nEnter 1 to enter another name, or enter 0 to search list.\n");
+        printf("\nWould you like to enter another name?\nEnter 1 to enter another name, or enter 0 to search list.\n");
         scanf("%d", &choice);
     }
+    printf("\n----------------------------------\n");
     display();
     int key = 0;
+    printf("\n----------------------------------\n");
     printf("Enter the key associated with the name you would like to retrieve:\n");
 
     //print table
@@ -126,6 +128,7 @@ int main()
     printf("The key retrieved is %d\n", retrieval->key);
 
     printf("program successful!\n");
+    printf("\n----------------------------------\n");
 
     return 0;
 }
